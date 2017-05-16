@@ -39,8 +39,10 @@ class Multipart(base.ContentHandler):
             default to `application/octet-stream'.
             """
             if isinstance(field, string_types) and field.startswith('<@'):
-                filename = os.path.join(test.test_directory, field.replace('<@', ''))
-                # urllib3 only seems happy with (filename, filecontent) tuples for these fields.
+                filename = os.path.join(test.test_directory,
+                                        field.replace('<@', ''))
+                # urllib3 only seems happy with (filename, filecontent)
+                # tuples for these fields.
                 return (filename, open(filename, 'rb').read())
             else:
                 return field
@@ -49,5 +51,6 @@ class Multipart(base.ContentHandler):
         body, content_type = encode_multipart_formdata(processed_data)
 
         # Update the content type with the boundary.
-        test.test_data['request_headers'].update({'content-type': content_type})
+        test.test_data['request_headers'].update({'content-type':
+                                                  content_type})
         return body
