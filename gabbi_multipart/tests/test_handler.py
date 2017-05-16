@@ -9,7 +9,7 @@ from gabbi import suitemaker
 from gabbi_multipart import handler
 
 
-class TestMultipartHandler(unittest.TestCase): 
+class TestMultipartHandler(unittest.TestCase):
 
     def setUp(self):
         super(TestMultipartHandler, self).setUp()
@@ -41,4 +41,3 @@ class TestMultipartHandler(unittest.TestCase):
         self.assertRaises(exception.GabbiFormatError,
                           self.handler.dumps,
                           'foo')
-

@@ -1,3 +1,4 @@
 pbr
 six
--e git+git://github.com/cdent/gabbi.git@ac0243df4620d417e94bb1c8abc31b57417e1ab5
+gabbi
+urllib3>=1.11.0
