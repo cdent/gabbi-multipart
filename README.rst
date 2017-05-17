@@ -25,8 +25,8 @@ Then write a test:
   POST: /somewhere
   request_headers:
     content-type: multipart/form-data
-    data:
-      key: val
-      index: 1
-      picture: @<sample.png
+  data:
+    key: val
+    index: 1
+    picture: @<sample.png
   status: 201
